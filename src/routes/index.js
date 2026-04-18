@@ -40,8 +40,8 @@ const router = Router();
  *                   type: string
  *                   example: acesso liberado
  *                 userId:
- *                   type: string
- *                   example: u1
+ *                   type: integer
+ *                   example: 1
  *       400:
  *         description: Login e senha são obrigatórios
  *         content:

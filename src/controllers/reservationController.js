@@ -3,7 +3,8 @@ const db = require("../data/db");
 let nextId = 1;
 
 function createReservation(req, res) {
-  const { roomId, date, startTime, endTime } = req.body;
+  const { roomId: roomIdRaw, date, startTime, endTime } = req.body;
+  const roomId = parseInt(roomIdRaw);
   const user = req.user;
 
   if (!roomId || !date || !startTime || !endTime) {

@@ -26,8 +26,8 @@ const router = Router();
  *               - endTime
  *             properties:
  *               roomId:
- *                 type: string
- *                 example: r1
+ *                 type: integer
+ *                 example: 1
  *               date:
  *                 type: string
  *                 format: date
