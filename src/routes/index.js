@@ -56,7 +56,6 @@ const router = Router();
  */
 router.post("/login", login);
 
-// Exemplo de rota protegida — outros devs adicionam suas rotas aqui
-// Padrão: router.use("/recurso", authMiddleware, require("./recursoRoutes"));
+router.use("/reservations", require("./reservationRoutes"));
 
 module.exports = { router, authMiddleware };
