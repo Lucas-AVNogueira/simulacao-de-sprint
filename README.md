@@ -1,4 +1,4 @@
-# Simulação de Sprint — Time A
+# Simulação de Sprint
 
 Projeto desenvolvido na Dinâmica de Simulação de uma Sprint Ágil — Time A.
 
