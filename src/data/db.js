@@ -4,7 +4,10 @@ const db = {
     { id: "u2", login: "bob", password: "senha456", name: "Bob Souza" },
   ],
   rooms: [],
-  reservations: [],
+  reservations: [
+    { id: 1, sala: 'A', userId: "u1" },
+    { id: 2, sala: 'A', userId: "u1" },
+  ],
 };
 
 module.exports = db;
