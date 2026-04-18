@@ -111,63 +111,7 @@ router.post("/login", login);
  *             schema:
  *               $ref: '#/components/schemas/Error'
  */
-router.delete("/reservas/:id", deleteReserva);
-
-/**
- * @openapi
- * /api/reservas/{id}:
- *   delete:
- *     summary: Cancelar uma reserva
- *     description: |
- *       Apenas o funcionário que criou a reserva pode cancelá-la.
- *       O usuário deve estar autenticado.
- *       Ao cancelar, a sala fica imediatamente disponível para novos agendamentos.
- *     tags:
- *       - Reservas
- *     security:
- *       - bearerAuth: []
- *     parameters:
- *       - in: path
- *         name: id
- *         required: true
- *         description: ID da reserva a ser cancelada
- *         schema:
- *           type: integer
- *           example: 1
- *     responses:
- *       200:
- *         description: Reserva cancelada com sucesso
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 message:
- *                   type: string
- *                   example: Reserva cancelada com sucesso
- *                 reservaId:
- *                   type: integer
- *                   example: 1
- *       401:
- *         description: Usuário não autenticado
- *         content:
- *           application/json:
- *             schema:
- *               $ref: '#/components/schemas/Error'
- *       403:
- *         description: Usuário não tem permissão para cancelar esta reserva
- *         content:
- *           application/json:
- *             schema:
- *               $ref: '#/components/schemas/Error'
- *       404:
- *         description: Reserva não encontrada
- *         content:
- *           application/json:
- *             schema:
- *               $ref: '#/components/schemas/Error'
- */
-router.delete("/reservas/:id", deleteReserva);
+router.delete("/reservas/:id", authMiddleware,deleteReserva);
 
 router.use("/reservations", require("./reservationRoutes"));
 

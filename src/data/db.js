@@ -10,8 +10,9 @@ const db = {
   ],
   rooms: [],
   reservations: [
-    { id: 1, sala: 'A', userId: "u1" },
-    { id: 2, sala: 'A', userId: "u1" },
+    { id: 1, sala: this.rooms[0].id, userId: "u1" },
+    { id: 2, sala: this.rooms[1].id, userId: "u1" },
+    { id: 3, sala: this.rooms[2].id, userId: "u1" },
   ],
 };
 
