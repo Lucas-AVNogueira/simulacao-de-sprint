@@ -2,6 +2,7 @@ const db = require("../data/db");
 
 function authMiddleware(req, res, next) {
   const userId = req.headers["x-user-id"];
+  console.log(req)
 
   if (!userId) {
     return res.status(401).json({ error: "Autenticação necessária." });
