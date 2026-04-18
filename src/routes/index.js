@@ -56,6 +56,7 @@ const router = Router();
  *               $ref: '#/components/schemas/Error'
  */
 router.post("/login", login);
+router.use("/reservations", require("./reservationRoutes"));
 
 /**
  * @openapi
@@ -69,7 +70,7 @@ router.post("/login", login);
  *     tags:
  *       - Reservas
  *     security:
- *       - bearerAuth: []
+ *       - userIdHeader: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -111,8 +112,6 @@ router.post("/login", login);
  *             schema:
  *               $ref: '#/components/schemas/Error'
  */
-router.delete("/reservas/:id", authMiddleware,deleteReserva);
-
-router.use("/reservations", require("./reservationRoutes"));
+router.delete("/reservas/:id", authMiddleware, deleteReserva);
 
 module.exports = { router, authMiddleware };
